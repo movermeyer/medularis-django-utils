@@ -7,7 +7,7 @@ import unittest
 class FunctionsTest(unittest.TestCase):
 
     def test_hex_sha1(self):
-        from lu_dj_utils.hex import hex_sha1, SHA1_RE
+        from med_djutils.hex import hex_sha1, SHA1_RE
 
         self.assertEqual(
             hex_sha1('', ''),
@@ -30,7 +30,7 @@ class FunctionsTest(unittest.TestCase):
     def test_random_hex_32(self):
         # values random enough such that there are no repetitions in 10,000 calls
 
-        from lu_dj_utils.hex import random_hex_32, HEX_32_RE
+        from med_djutils.hex import random_hex_32, HEX_32_RE
 
         keys = {}
         size_ = 10000
@@ -46,7 +46,7 @@ class FunctionsTest(unittest.TestCase):
         # values random enough such that there are no repetitions in 100 calls
         # (with 1,000 it fails frequently enough to be annoying)
 
-        from lu_dj_utils.hex import random_hex_6, HEX_6_RE
+        from med_djutils.hex import random_hex_6, HEX_6_RE
 
         keys = {}
         size_ = 100

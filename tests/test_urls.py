@@ -23,14 +23,14 @@ class BuildQuerystring(SimpleTestCase):  # TODO: change to unittest.TestCase?
         self.expected = (part_a + '&' + part_b, part_b + '&' + part_a)
 
     def test_with_dict(self):
-        from lu_dj_utils.urls import build_querystring
+        from med_djutils.urls import build_querystring
 
         result = build_querystring(self._dict)
         self.assertTrue(
             result == self.expected[0] or result == self.expected[1])
 
     def test_with_query_dict(self):
-        from lu_dj_utils.urls import build_querystring
+        from med_djutils.urls import build_querystring
 
         result = build_querystring(self._query_dict)
         self.assertTrue(
@@ -42,7 +42,7 @@ class Functions(TestCase):  # TODO: change to SimpleTestCase or unittest.TestCas
     @override_settings(SITE_ID=10)
     def test_build_full_url(self):
         from django.contrib.sites.models import Site
-        from lu_dj_utils.urls import build_full_url
+        from med_djutils.urls import build_full_url
 
         Site.objects.create(pk=10, domain='mycooldomain.com')
         site2 = Site.objects.create(domain='www.domain2.com')
@@ -60,7 +60,7 @@ class Functions(TestCase):  # TODO: change to SimpleTestCase or unittest.TestCas
     @override_settings(SITE_ID=10)
     def test_get_full_url(self):
         from django.contrib.sites.models import Site
-        from lu_dj_utils.urls import get_full_url
+        from med_djutils.urls import get_full_url
 
         Site.objects.create(pk=10, domain='mycooldomain.com')
         site2 = Site.objects.create(domain='www.domain2.com')

@@ -11,7 +11,7 @@ class FunctionsTest(TestCase):  # TODO: change to SimpleTestCase or unittest.Tes
 
     def test_create_request(self):
         from django.core.handlers.wsgi import WSGIRequest
-        from lu_dj_utils.test import create_request
+        from med_djutils.test import create_request
 
         req = create_request('my-path', 'get')
         self.assertIsInstance(req, WSGIRequest)

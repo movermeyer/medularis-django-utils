@@ -3,7 +3,7 @@ from __future__ import absolute_import, print_function, unicode_literals
 
 from setuptools import find_packages, setup
 
-import lu_dj_utils
+import med_djutils
 
 
 with open('README.rst') as f:
@@ -27,7 +27,7 @@ classifiers = (
 
 setup(
     name="lu-dj-utils",
-    version=lu_dj_utils.__version__,
+    version=med_djutils.__version__,
     description='',
     long_description=readme,
     author='German Larrain',

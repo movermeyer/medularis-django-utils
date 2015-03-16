@@ -40,7 +40,7 @@ class PlainEmail(SimpleTestCase):
         self.headers = NonCallableMagicMock(spec=dict)
 
     def test_create_message(self):
-        from lu_dj_utils.email import PlainEmail
+        from med_djutils.email import PlainEmail
 
         msg = PlainEmail().create_message()
         self.assertIsInstance(msg, PlainEmail.django_mail_class)
@@ -54,7 +54,7 @@ class PlainEmail(SimpleTestCase):
         self.basic_msg_assertions(msg)
 
     def test_real_send(self):
-        from lu_dj_utils.email import PlainEmail
+        from med_djutils.email import PlainEmail
 
         _reset_test_outbox()
         self.assertEqual(len(django_mail.outbox), 0)
@@ -95,7 +95,7 @@ class HTMLEmail(PlainEmail):
         self.html_body = NonCallableMock(spec=str)
 
     def test_create_message(self):
-        from lu_dj_utils.email import HTMLEmail
+        from med_djutils.email import HTMLEmail
 
         msg = HTMLEmail(self.html_body).create_message()
         self.assertIsInstance(msg, HTMLEmail.django_mail_class)
@@ -111,7 +111,7 @@ class HTMLEmail(PlainEmail):
         self.assert_HTML_alternative(msg, self.html_body)
 
     def test_real_send(self):
-        from lu_dj_utils.email import HTMLEmail
+        from med_djutils.email import HTMLEmail
 
         _reset_test_outbox()
         self.assertEqual(len(django_mail.outbox), 0)
@@ -158,13 +158,13 @@ class SendMail2(SimpleTestCase):
         self.headers = NonCallableMagicMock(spec=dict)
 
     def test_simplest_call(self):
-        from lu_dj_utils.email import send_mail2
+        from med_djutils.email import send_mail2
 
         self.assertEqual(send_mail2(), 0)
 
     def test_full_call(self):
         """Test the function using all the parameters with mock objects."""
-        from lu_dj_utils.email import send_mail2
+        from med_djutils.email import send_mail2
 
         (subject, body, from_email, to, cc, bcc, reply_to, fail_silently,
             auth_user, auth_password, connection, attachments, headers) = \
@@ -197,7 +197,7 @@ class SendMail2(SimpleTestCase):
         :func:`django.core.mail.get_connection` is used.
 
         """
-        from lu_dj_utils.email import send_mail2
+        from med_djutils.email import send_mail2
 
         # Case A: if 'connection' is passed, that is used
         with patch.object(django_mail.EmailMessage, '__init__', return_value=None) as mock_init:
@@ -224,7 +224,7 @@ class SendMail2(SimpleTestCase):
                         username=None, password=None, fail_silently=False)
 
     def test_reply_to(self):
-        from lu_dj_utils.email import send_mail2
+        from med_djutils.email import send_mail2
 
         mock_conn = Mock(name='connection')
 
@@ -259,7 +259,7 @@ class SendMail2(SimpleTestCase):
                     self.assertFalse(self.headers.__setitem__.called)
 
     def test_real_call(self):
-        from lu_dj_utils.email import send_mail2
+        from med_djutils.email import send_mail2
 
         _reset_test_outbox()
         outbox = django_mail.outbox
@@ -275,7 +275,7 @@ class SendMail2(SimpleTestCase):
         self.assertIn(body, outbox[0].body)
 
     def test_invalid_addresses(self):
-        from lu_dj_utils.email import send_mail2
+        from med_djutils.email import send_mail2
 
         _reset_test_outbox()
         outbox = django_mail.outbox
@@ -348,7 +348,7 @@ class SendTemplatedMailTest(TestCase):
         self.assertEqual(outbox[0].from_email, settings.DEFAULT_FROM_EMAIL)
 
     def test_html(self):
-        from lu_dj_utils.email import render_to_string, send_templated_mail
+        from med_djutils.email import render_to_string, send_templated_mail
 
         _reset_test_outbox()
         outbox = django_mail.outbox
@@ -369,7 +369,7 @@ class SendTemplatedMailTest(TestCase):
         self.assertEqual(html_alternative[1], 'text/html')
 
     def _send_default(self, email_address):
-        from lu_dj_utils.email import send_templated_mail
+        from med_djutils.email import send_templated_mail
 
         return send_templated_mail(
             self.context, self.subject_name, self.body_name, to=[email_address])
@@ -379,7 +379,7 @@ class Functions(SimpleTestCase):
 
     # noinspection PyTypeChecker
     def test_set_header_reply_to(self):
-        from lu_dj_utils.email import set_header_reply_to
+        from med_djutils.email import set_header_reply_to
 
         func = set_header_reply_to
 

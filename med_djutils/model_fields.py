@@ -9,14 +9,14 @@ from __future__ import absolute_import, print_function, unicode_literals
 import django.db.models
 import django.forms
 
-import lu_dj_utils.hex
+import med_djutils.hex
 
 
 class Hex32Field(django.db.models.CharField):
 
     """Hex digits string of length 32, very practical for hash keys.
 
-    Default value is calculated by :func:`lu_dj_utils.hex.random_hex_32` (UUID version 4).
+    Default value is calculated by :func:`med_djutils.hex.random_hex_32` (UUID version 4).
     Although it's very unlikely that it returns a repeated value,
     uniqueness is enforced at database level as precautionary measure.
 
@@ -26,7 +26,7 @@ class Hex32Field(django.db.models.CharField):
 
     def __init__(self, *args, **kwargs):
         kwargs['blank'] = False
-        kwargs['default'] = lu_dj_utils.hex.random_hex_32
+        kwargs['default'] = med_djutils.hex.random_hex_32
         kwargs['max_length'] = 32
         kwargs['unique'] = True
         kwargs.setdefault('editable', False)
@@ -37,7 +37,7 @@ class Hex6Field(django.db.models.CharField):
 
     """Hex digits string of length 6.
 
-    Default value is calculated by :func:`lu_dj_utils.hex.random_hex_6`
+    Default value is calculated by :func:`med_djutils.hex.random_hex_6`
     (substring of UUID version 4).
     Uniqueness is enforced at database level as precautionary measure.
 
@@ -47,7 +47,7 @@ class Hex6Field(django.db.models.CharField):
 
     def __init__(self, *args, **kwargs):
         kwargs['blank'] = False
-        kwargs['default'] = lu_dj_utils.hex.random_hex_6
+        kwargs['default'] = med_djutils.hex.random_hex_6
         kwargs['max_length'] = 6
         kwargs['unique'] = True
         kwargs.setdefault('editable', False)

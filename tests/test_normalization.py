@@ -10,14 +10,14 @@ import unittest
 class Functions(unittest.TestCase):
 
     def test_normalize_email(self):
-        from lu_dj_utils.normalization import normalize_email
+        from med_djutils.normalization import normalize_email
 
         self.assertEqual('a@a.com', normalize_email('A@A.COM'))
         self.assertEqual('a@a.com', normalize_email(' a@a.com '))
         self.assertEqual('a@a.com', normalize_email('\t  a@a.com\n'))
 
     def test_normalize_name(self):
-        from lu_dj_utils.normalization import normalize_name
+        from med_djutils.normalization import normalize_name
 
         self.assertEqual(normalize_name('oneTwoThree'), 'one_two_three')
         self.assertEqual(normalize_name('UnoAUno'), 'uno_a_uno')
