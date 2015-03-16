@@ -1,6 +1,14 @@
 medularis-django-utils (Medularis' Django utilities)
 ====================================================
 
+.. image:: https://secure.travis-ci.org/medularis/medularis-django-utils.png?branch=master
+   :target: http://travis-ci.org/medularis/medularis-django-utils
+.. image:: https://coveralls.io/repos/medularis/medularis-django-utils/badge.png?branch=master
+   :target: https://coveralls.io/r/medularis/medularis-django-utils
+.. image:: https://pypip.in/version/medularis-django-utils/badge.png
+   :target: https://pypi.python.org/pypi/medularis-django-utils/
+   :alt: Latest version
+
 Medularis' open source utilities for use in Django projects.
 
 This project is a fork of `lu-dj-utils <https://github.com/lookup/lu-dj-utils>`_.
@@ -24,4 +32,10 @@ At the project root directory run:
 
 .. code-block:: console
 
-    $ python -m unittest discover
+    $ python setup.py test
+
+To test the project in all the supported Python environments run:
+
+.. code-block:: console
+
+    $ tox
