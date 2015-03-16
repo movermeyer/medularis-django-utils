@@ -21,7 +21,7 @@ DEFAULT_SETTINGS = dict(
             }
         },
     SILENCED_SYSTEM_CHECKS=[
-        # '1_7.W001',
+        '1_7.W001',  # MIDDLEWARE_CLASSES is not set
     ],
 )
 
