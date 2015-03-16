@@ -53,6 +53,7 @@ LOGGING_CONFIG = {
 
 DEFAULT_SETTINGS = dict(
     INSTALLED_APPS=(
+        'django.contrib.sites',  # used by `med_djutils.urls`
         'med_djutils',
         ),
     DATABASES={
