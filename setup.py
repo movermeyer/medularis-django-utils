@@ -32,7 +32,7 @@ setup(
     long_description=readme,
     author='German Larrain',
     author_email='glarrain@users.noreply.github.com',
-    url='https://github.com/lookup/lu-dj-utils',
+    url='https://github.com/medularis/medularis-django-utils',
     packages=packages,
     license='3-clause BSD',  # TODO: verify name is correct
     zip_safe=False,
