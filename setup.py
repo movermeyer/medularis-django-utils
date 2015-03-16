@@ -13,6 +13,7 @@ packages = find_packages()
 
 classifiers = (
     'Development Status :: 4 - Beta',
+    'Environment :: Web Environment',
     'Intended Audience :: Developers',
     # the FSF refers to it as "Modified BSD License". Other names include
     # "New BSD", "revised BSD", "BSD-3", or "3-clause BSD"
@@ -21,8 +22,10 @@ classifiers = (
     'Operating System :: OS Independent',
     'Programming Language :: Python',
     'Programming Language :: Python :: 2.7',
+    'Programming Language :: Python :: 3',
     'Programming Language :: Python :: 3.3',
     'Programming Language :: Python :: 3.4',
+    'Framework :: Django',
 )
 
 setup(
