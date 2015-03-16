@@ -28,7 +28,7 @@ classifiers = (
 setup(
     name="medularis-django-utils",
     version=med_djutils.__version__,
-    description='',
+    description="Medularis's open source utilities for use in Django projects",
     long_description=readme,
     author='German Larrain',
     author_email='glarrain@users.noreply.github.com',
