@@ -44,6 +44,7 @@ setup(
 
     tests_require=[
         'Django>=1.6',
+        'mock>=1.0.1',
     ],
     test_suite='runtests.runtests',
 )
