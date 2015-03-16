@@ -1,7 +1,9 @@
-lu-dj-utils (LookUP.cl's Django utilities)
-==================================================
+medularis-django-utils (Medularis' Django utilities)
+====================================================
 
-LookUP.cl's open source utilities for use in Django projects.
+Medularis' open source utilities for use in Django projects.
+
+This project is a fork of `lu-dj-utils <https://github.com/lookup/lu-dj-utils>`_.
 
 
 License
