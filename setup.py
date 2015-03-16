@@ -26,7 +26,7 @@ classifiers = (
 )
 
 setup(
-    name="lu-dj-utils",
+    name="medularis-django-utils",
     version=med_djutils.__version__,
     description='',
     long_description=readme,
