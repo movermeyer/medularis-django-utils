@@ -1,6 +1,11 @@
 #!/usr/bin/env python
+"""
 
-import os, sys
+source: https://github.com/carljm/django-model-utils/blob/f8a7c50/runtests.py
+
+"""
+import os
+import sys
 
 from django.conf import settings
 import django
@@ -8,16 +13,17 @@ import django
 
 DEFAULT_SETTINGS = dict(
     INSTALLED_APPS=(
-        'model_utils',
-        'model_utils.tests',
+        'med_djutils',
         ),
     DATABASES={
-        "default": {
-            "ENGINE": "django.db.backends.sqlite3"
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
             }
         },
-    SILENCED_SYSTEM_CHECKS=["1_7.W001"],
-    )
+    SILENCED_SYSTEM_CHECKS=[
+        # '1_7.W001',
+    ],
+)
 
 
 def runtests():
@@ -34,7 +40,7 @@ def runtests():
     try:
         from django.test.runner import DiscoverRunner
         runner_class = DiscoverRunner
-        test_args = ['model_utils.tests']
+        test_args = ['tests']
     except ImportError:
         from django.test.simple import DjangoTestSuiteRunner
         runner_class = DjangoTestSuiteRunner
