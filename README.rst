@@ -14,6 +14,16 @@ Medularis' open source utilities for use in Django projects.
 This project is a fork of `lu-dj-utils <https://github.com/lookup/lu-dj-utils>`_.
 
 
+Install
+-------
+
+.. code-block:: console
+
+    $ pip install medularis-django-utils
+
+Do not change anything in your ``settings`` module.
+
+
 License
 -------
 
