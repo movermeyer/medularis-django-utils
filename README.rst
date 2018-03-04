@@ -5,7 +5,7 @@ medularis-django-utils (Medularis' Django utilities)
    :target: http://travis-ci.org/medularis/medularis-django-utils
 .. image:: https://coveralls.io/repos/medularis/medularis-django-utils/badge.png?branch=master
    :target: https://coveralls.io/r/medularis/medularis-django-utils
-.. image:: https://pypip.in/version/medularis-django-utils/badge.png
+.. image:: https://img.shields.io/pypi/v/medularis-django-utils.svg
    :target: https://pypi.python.org/pypi/medularis-django-utils/
    :alt: Latest version
 
